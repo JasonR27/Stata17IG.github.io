@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.15s ease;
 }
 
 /* Variables */
@@ -17,8 +18,8 @@ $bodyBackground: -webkit-linear-gradient(
   rgba(96, 0, 251, 0.85) 60%,
   rgba(63, 0, 251, 0.85) 90%
 );
-$menuLinks: -webkit-linear-gradient(white, black);
 
+$menuLinks: -webkit-linear-gradient(white, black);
 $mainSectionTitlesColor: -webkit-linear-gradient(90deg, white 0%, black 100%);
 $mainSectionTitlesBackground: -webkit-linear-gradient(
   bottom left,
@@ -75,7 +76,7 @@ $navMenuBackground: -webkit-linear-gradient(
   }
 }
 
-@include scrollbars(0.6em, $primaryColor);
+@include scrollbars(0.9em, $primaryColor);
 
 /*Global Elements */
 
@@ -83,16 +84,79 @@ $navMenuBackground: -webkit-linear-gradient(
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Dark Mode Toggler */
+
+.switch {
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+  height: 3rem;
+  width: 3rem;
+  /*background: rgb(255, 255, 255);
+  background: $bodyBackground;  */
+  background-color: transparent;
+  border: 1px solid $mainTextColor;
+  color: $mainTextColor;
+  border-radius: 50%;
+  z-index: 100;
+}
+
 /* Body Styling */
+
+/* Themes */
 
 body {
   display: flex;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: rgb(255, 255, 255);
+  color: $mainTextColor;
+}
+
+.StataTheme {
+  background: purple;
   background: $bodyBackground;
   color: $mainTextColor;
+}
+
+.dark {
+  background: black;
+  $bodyBackground: black;
+  $mainTextColor: white;
+  $navMenuBackground: black;
+  $navMenuColor: white;
+}
+
+.mainSectionTitles {
+  color: $mainSectionTitlesColor;
+  background: $mainSectionTitlesBackground;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.mainSectionTitlesDarkTheme {
+  color: white;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.navMenuColors {
+  a {
+    color: $navMenuColor;
+    background: $navMenuBackground;
+  }
+}
+
+.navMenuColorsDarkTheme {
+  a {
+    color: white;
+    background: white;
+  }
 }
 
 /* Main-Doc Styling */
@@ -143,8 +207,6 @@ body {
   }
 
   a {
-    color: $navMenuColor;
-    background: $navMenuBackground;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -203,7 +265,7 @@ body {
 }
 
 #welcomeSection:before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   right: 0;
@@ -213,7 +275,7 @@ body {
 }
 
 #welcomeSection:after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -222,14 +284,9 @@ body {
   width: 0;
 }
 
-#welcomeSection img {
-  position: absolute;
-  left: 0;
-  transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
-}
+/*Movimiento de las Imagenes en el Header*/
+
+/* Sombras en parrafos e Imagenes */
 
 /* Main section styles - Contenido de la Guia */
 
@@ -245,25 +302,12 @@ body {
   padding: 0;
   display: grid;
 
-  .mainSectionTitles {
-    color: $mainSectionTitlesColor;
-    background: $mainSectionTitlesBackground;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
   #parrafoBienvenida {
     width: 95%;
   }
 }
 
 /* Main doc Styles */
-
-#esperarPorDescarga {
-  position: absolute;
-  margin-top: 4rem;
-}
 
 #guiaInstalacion {
   padding: 3rem;
@@ -300,19 +344,21 @@ body {
 }
 
 #requerimientosDeSistemaImg {
-  box-sizing: border-box;  
-  height: 18rem;
+  box-sizing: border-box;
+  height: 100%;
   padding: 3rem;
-  width: 50rem;
-  transition: height 1s;
+  width: 100%;
+  //transition: width 1s, height 1s;
 }
 
-#requerimientosDeSistemaImg:hover {  
-  height: 28rem;
+#requerimientosDeSistemaImg:hover {
+  height: 115%;
+  width: 115%;
+  justify-self: center;
 }
 
 #comprReq {
-  border: 5px solid green;  
+  text-align: center;
   padding: 1rem;
 }
 
@@ -340,7 +386,7 @@ body {
   li::before {
     /* Increment "my-sec-counter" by 1 */
     counter-increment: my-sec-counter;
-    content: counter(my-sec-counter) ".";
+    content: counter(my-sec-counter) '.';
     color: $mainTextColor;
     position: absolute;
   }
@@ -350,18 +396,34 @@ body {
     background: $navMenuBackground;
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: red;    
-    width: 100%;   
+    -webkit-text-fill-color: purple;
+    text-decoration: underline;
+    width: 100%;
+    text-align: center;
   }
 
   .lista1-OL {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem 1rem 1rem 0;
   }
 
   #plista1-OL {
     margin-left: 1rem;
+    background: gray;
+    box-shadow: 5px 5px;
+    padding: 3px;
+    transition: color 2s;
+  }
+
+  #plista1-OL:hover {
+    color: rgb(116, 0, 19);
+  }
+
+  #opcion-inicializacion {
+    background: gray;
+    box-shadow: 10px 5px;
   }
 
   #contenidolista1 {
@@ -369,38 +431,63 @@ body {
     flex-direction: column;
   }
 
-  #descargueElInstalador {   
-    font-size: 2rem;        
+  #descargueElInstalador {
+    font-size: 2rem;
     padding: 2rem;
     width: 100%;
   }
 
   #esperarPorDescarga {
-    position: absolute;
+    width: 25rem;
+    height: 10rem;
     margin-top: 1rem;
     margin-left: 10rem;
+    padding: 1rem;
+  }
+
+  #esperarPorDescarga:hover {
+    width: 30rem;
+    height: 15rem;
   }
 
   .lista2-OL {
     margin-top: 5rem;
-    padding-top: 5rem;
     width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   #plista2-OL {
-    margin-left: 1rem;
-    //border: 3px solid green;
-    width: 50%;
+    margin-left: 1.2rem;
+    margin-bottom: 10rem;
+    background: gray;
+    box-shadow: 5px 5px;
+    transition: color 2s;
+  }
+
+  #plista2-OL:hover {
+    color: rgb(116, 0, 19);
+  }
+
+  #ejecutarComoAdminIMG {
+    //transition: width 1s, height 1s;
+    width: 20rem;
+    height: 20rem;
+    margin-right: 3rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    transition: width 1s, height 1s;
+  }
+
+  #ejecutarComoAdminIMG:hover {
+    width: 32rem;
+    height: 35rem;
+    margin-right: 5rem;
   }
 
   .inicialización {
     margin-bottom: -7rem;
-  }
-
-  #listDerImg {
-    height: 100%;
-    margin-top: 9rem;
-    margin-right: 6rem;
   }
 
   #lineaDireccionadora {
@@ -420,33 +507,33 @@ body {
     margin-top: 5rem;
     padding-top: 5rem;
     width: 90%;
-    #plistaOL3 {
-      margin-left: 1rem;
-      //border: 3px solid green;
-      width: 50%;
+    #plista3-OL {
+      margin-left: 1.5rem;
+      min-width: 50%;
+      background: gray;
+      box-shadow: 10px 5px;
+      padding: 1rem;
+    }
+    :hover {
+      color: rgb(116, 0, 19);
     }
   }
 
   .lista4-OL {
     margin-left: 5rem;
     padding-top: 5rem;
-    #plistaOL4 {
+    #plista4-OL {
+      margin-left: 1.5rem;
       margin-bottom: 3rem;
       width: 72%;
+      background: gray;
+      box-shadow: 10px 5px;
+      padding: 1rem;
+    }
+    :hover {
+      color: rgb(116, 0, 19);
     }
   }
-}
-
-#tiposDeProcesador {
-}
-
-#numberedList {
-  display: grid;
-  font-size: 2rem;
-}
-
-.ejecutarComoAdminText {
-  margin-left: -14%;
 }
 
 #listLine {
@@ -457,6 +544,12 @@ body {
   margin-left: 25%;
 }
 
+#secondListCont-OL {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 #rowFlexBox {
   display: flex;
   flex-direction: row;
@@ -465,6 +558,9 @@ body {
   p {
     width: 35%;
     align-self: center;
+  }
+  p:hover {
+    color: rgb(116, 0, 19);
   }
 }
 
@@ -484,30 +580,43 @@ body {
 
 #rowFlexBox {
   .imgRight {
-    transition: width 1s;
-    width: 26rem;
-    height: 26rem;    
-  }
-  .imgLeft {
-    transition: width 1s;
+    transition: width 1s, height 1s;
     width: 20rem;
     height: 20rem;
+    margin-right: 2rem;
+    margin-top: 8.5rem;
+  }
+  .imgLeft {
+    transition: width 1s, height 1s;
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .imglista10 {
+    transition: width 1s, height 1s;
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .imglista10:hover {
+    width: 35rem;
+    height: 35rem;
+    margin-right: 5rem;
   }
 
   .imgLeft:hover {
     width: 25rem;
     height: 25rem;
     margin-left: 5rem;
-
   }
   .imgRight:hover {
-    width: 35rem;
-    height: 35rem;
+    width: 31rem;
+    height: 31rem;
     margin-right: 5rem;
   }
 
   p:hover {
-    color: pink;
+    color: rgb(116, 0, 19);
   }
 }
 
@@ -538,7 +647,6 @@ body {
   li {
     list-style: none;
     box-sizing: border;
-    // border: 3px solid white;
     width: 100%;
     margin: 0;
   }
@@ -546,23 +654,38 @@ body {
   li::before {
     /* Increment "my-sec-counter" by 1 */
     counter-increment: my-sec-counter;
-    content: counter(my-sec-counter) ".";
+    content: counter(my-sec-counter) '.';
     color: $mainTextColor;
     position: absolute;
   }
 
   .listaGrande-OL {
-    margin-top: 3rem;
-
     #plistaGrandeOL {
       margin-top: 1rem;
       margin-left: 1.5rem;
+      background: gray;
+      box-shadow: 10px 5px;
+      padding: 1rem;
+      width: 95%;
+    }
+    #plistaGrandeOL:hover {
+      color: rgb(116, 0, 19);
     }
   }
 
   #listImgGrande {
+    width: 31rem;
+    height: 31rem;
     margin-top: 2rem;
-    margin-left: 25%;
+    margin-left: 22%;
+    transition: width 1s, height 1s;
+  }
+
+  #listImgGrande:hover {
+    width: 40rem;
+    height: 40rem;
+    padding: 1rem;
+    margin-left: 10rem;
   }
 }
 
@@ -582,7 +705,7 @@ body {
 
 #Contacto_Info {
   display: grid;
-  justify-content: space-around;
+  justify-content: center;
   width: 80%;
   margin-left: 10%;
   grid-gap: 1.5rem;
@@ -593,18 +716,10 @@ body {
     justify-self: center;
   }
 
-  h1 {
-    color: $mainSectionTitlesColor;
-    background: $mainSectionTitlesBackground;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    justify-self: center;
-  }
-
   #direccionParaInquietudes {
     width: 70%;
     justify-self: center;
+    text-align: center;
   }
 
   #áreaDeSoporte {
@@ -614,13 +729,14 @@ body {
     justify-self: center;
 
     b {
-      width: 10rem;      
+      width: 10rem;
       justify-self: center;
     }
-    p {      
+    p {
       margin: 0;
       min-width: 15rem;
       justify-self: center;
+      text-align: center;
     }
     a {
       width: 15%;
@@ -630,12 +746,12 @@ body {
       color: $mainTextColor;
     }
   }
+
   ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-self: center;
     grid-gap: 0;
-    margin-right: 4rem;
     li {
       list-style: none;
       display: grid;
@@ -695,20 +811,103 @@ body {
 @media (max-width: 1000px) {
   body {
     flex-direction: column;
+    justify-content: flex-start;
+    @include scrollbars(1rem, $primaryColor);
+  }
+
+  .lineadireccionadora {
+    visibility: hidden;
+    display: none;
   }
 
   #navbar {
-    height: 40vh;
-    width: 100%;
+    height: 18rem;
+    width: 99.5%;
     position: absolute;
+    margin-right: 6rem;
   }
 
   #main-doc {
-    margin: 40vh 0 0 0;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+  }
+
+  #welcomeSection {
+    width: 100%;
+    margin-left: 0;
+    left: 0;
+    top: 18rem;
+    width: 99.5%;
+
+    #wSImg {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .main-section {
+    position: absolute;
+    margin-top: 36.5rem;
+    width: 99%;
+
+    .mstext {
+      width: 20rem;
+      margin-right: 10rem;
+      text-align: center;
+    }
+
+    ol {
+      width: 100%;
+    }
+    li {
+      width: 8rem;
+    }
+
+    .req-sistema {
+      width: 20%;
+      height: 10%;
+    }
+
+    #secondListCont-OL {
+      flex-direction: column;
+    }
+
+    img {
+      width: 8rem;
+      height: 8rem;
+    }
+
+    #rowFlexBox {
+      flex-direction: column;
+      max-width: 5rem;
+      #imgLeft {
+        width: 1rem;
+        height: 1rem;
+      }
+      #imgRight {
+        width: 1rem;
+        height: 1rem;
+      }
+      p {
+        width: 50%;
+      }
+    }
+    p {
+    }
+    img {
+      width: 5rem;
+      height: 5rem;
+    }
   }
 
   h1 {
     text-align: center;
+  }
+
+  #Contacto_Info {
+    margin-top: 1450%;
+    max-width: 54vw;
   }
 }
 

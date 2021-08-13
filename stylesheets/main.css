@@ -4,13 +4,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.15s ease;
 }
 
 /* Variables */
 /*Browser Styling*/
 ::-webkit-scrollbar {
-  width: 0.6em;
-  height: 0.6em;
+  width: 0.9em;
+  height: 0.9em;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -29,15 +30,68 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Dark Mode Toggler */
+.switch {
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+  height: 3rem;
+  width: 3rem;
+  /*background: rgb(255, 255, 255);
+  background: $bodyBackground;  */
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 50%;
+  z-index: 100;
+}
+
 /* Body Styling */
+/* Themes */
 body {
   display: flex;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: white;
+  color: white;
+}
+
+.StataTheme {
+  background: purple;
   background: -webkit-linear-gradient(-60deg, rgba(63, 0, 251, 0.85) 10%, rgba(96, 0, 251, 0.85) 60%, rgba(63, 0, 251, 0.85) 90%);
   color: white;
+}
+
+.dark {
+  background: black;
+}
+
+.mainSectionTitles {
+  color: -webkit-linear-gradient(90deg, white 0%, black 100%);
+  background: -webkit-linear-gradient(bottom left, black 0%, white 30%, black 40%, white 50%, black 60%, white 70%, black 80%, white 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.mainSectionTitlesDarkTheme {
+  color: white;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.navMenuColors a {
+  color: -webkit-linear-gradient(90deg, white 0%, black 100%);
+  background: -webkit-linear-gradient(bottom left, black 0%, white 30%, black 40%, white 50%, black 60%, white 70%, black 80%, white 90%);
+}
+
+.navMenuColorsDarkTheme a {
+  color: white;
+  background: white;
 }
 
 /* Main-Doc Styling */
@@ -88,8 +142,6 @@ body {
 }
 
 #navbar a {
-  color: -webkit-linear-gradient(90deg, white 0%, black 100%);
-  background: -webkit-linear-gradient(bottom left, black 0%, white 30%, black 40%, white 50%, black 60%, white 70%, black 80%, white 90%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -146,7 +198,7 @@ body {
 }
 
 #welcomeSection:before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   right: 0;
@@ -156,7 +208,7 @@ body {
 }
 
 #welcomeSection:after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -165,13 +217,8 @@ body {
   width: 0;
 }
 
-#welcomeSection img {
-  position: absolute;
-  left: 0;
-  transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
-}
-
+/*Movimiento de las Imagenes en el Header*/
+/* Sombras en parrafos e Imagenes */
 /* Main section styles - Contenido de la Guia */
 .main-section {
   border-left: 50px ridge #172bb9;
@@ -186,24 +233,11 @@ body {
   display: grid;
 }
 
-.main-section .mainSectionTitles {
-  color: -webkit-linear-gradient(90deg, white 0%, black 100%);
-  background: -webkit-linear-gradient(bottom left, black 0%, white 30%, black 40%, white 50%, black 60%, white 70%, black 80%, white 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .main-section #parrafoBienvenida {
   width: 95%;
 }
 
 /* Main doc Styles */
-#esperarPorDescarga {
-  position: absolute;
-  margin-top: 4rem;
-}
-
 #guiaInstalacion {
   padding: 3rem;
   justify-self: center;
@@ -242,18 +276,19 @@ body {
 
 #requerimientosDeSistemaImg {
   box-sizing: border-box;
-  height: 18rem;
+  height: 100%;
   padding: 3rem;
-  width: 50rem;
-  transition: height 1s;
+  width: 100%;
 }
 
 #requerimientosDeSistemaImg:hover {
-  height: 28rem;
+  height: 115%;
+  width: 115%;
+  justify-self: center;
 }
 
 #comprReq {
-  border: 5px solid green;
+  text-align: center;
   padding: 1rem;
 }
 
@@ -292,18 +327,34 @@ body {
   background: -webkit-linear-gradient(bottom left, black 0%, white 30%, black 40%, white 50%, black 60%, white 70%, black 80%, white 90%);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: red;
+  -webkit-text-fill-color: purple;
+  text-decoration: underline;
   width: 100%;
+  text-align: center;
 }
 
 #oLContainer .lista1-OL {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1rem 1rem 1rem 0;
 }
 
 #oLContainer #plista1-OL {
   margin-left: 1rem;
+  background: gray;
+  box-shadow: 5px 5px;
+  padding: 3px;
+  transition: color 2s;
+}
+
+#oLContainer #plista1-OL:hover {
+  color: #740013;
+}
+
+#oLContainer #opcion-inicializacion {
+  background: gray;
+  box-shadow: 10px 5px;
 }
 
 #oLContainer #contenidolista1 {
@@ -318,30 +369,55 @@ body {
 }
 
 #oLContainer #esperarPorDescarga {
-  position: absolute;
+  width: 25rem;
+  height: 10rem;
   margin-top: 1rem;
   margin-left: 10rem;
+  padding: 1rem;
+}
+
+#oLContainer #esperarPorDescarga:hover {
+  width: 30rem;
+  height: 15rem;
 }
 
 #oLContainer .lista2-OL {
   margin-top: 5rem;
-  padding-top: 5rem;
   width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 #oLContainer #plista2-OL {
-  margin-left: 1rem;
-  width: 50%;
+  margin-left: 1.2rem;
+  margin-bottom: 10rem;
+  background: gray;
+  box-shadow: 5px 5px;
+  transition: color 2s;
+}
+
+#oLContainer #plista2-OL:hover {
+  color: #740013;
+}
+
+#oLContainer #ejecutarComoAdminIMG {
+  width: 20rem;
+  height: 20rem;
+  margin-right: 3rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  transition: width 1s, height 1s;
+}
+
+#oLContainer #ejecutarComoAdminIMG:hover {
+  width: 32rem;
+  height: 35rem;
+  margin-right: 5rem;
 }
 
 #oLContainer .inicialización {
   margin-bottom: -7rem;
-}
-
-#oLContainer #listDerImg {
-  height: 100%;
-  margin-top: 9rem;
-  margin-right: 6rem;
 }
 
 #oLContainer #lineaDireccionadora {
@@ -363,9 +439,16 @@ body {
   width: 90%;
 }
 
-#oLContainer .lista3-OL #plistaOL3 {
-  margin-left: 1rem;
-  width: 50%;
+#oLContainer .lista3-OL #plista3-OL {
+  margin-left: 1.5rem;
+  min-width: 50%;
+  background: gray;
+  box-shadow: 10px 5px;
+  padding: 1rem;
+}
+
+#oLContainer .lista3-OL :hover {
+  color: #740013;
 }
 
 #oLContainer .lista4-OL {
@@ -373,18 +456,17 @@ body {
   padding-top: 5rem;
 }
 
-#oLContainer .lista4-OL #plistaOL4 {
+#oLContainer .lista4-OL #plista4-OL {
+  margin-left: 1.5rem;
   margin-bottom: 3rem;
   width: 72%;
+  background: gray;
+  box-shadow: 10px 5px;
+  padding: 1rem;
 }
 
-#numberedList {
-  display: grid;
-  font-size: 2rem;
-}
-
-.ejecutarComoAdminText {
-  margin-left: -14%;
+#oLContainer .lista4-OL :hover {
+  color: #740013;
 }
 
 #listLine {
@@ -393,6 +475,12 @@ body {
 
 #languageSelection {
   margin-left: 25%;
+}
+
+#secondListCont-OL {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 #rowFlexBox {
@@ -404,6 +492,10 @@ body {
 #rowFlexBox p {
   width: 35%;
   align-self: center;
+}
+
+#rowFlexBox p:hover {
+  color: #740013;
 }
 
 #linea,
@@ -421,15 +513,29 @@ body {
 }
 
 #rowFlexBox .imgRight {
-  transition: width 1s;
-  width: 26rem;
-  height: 26rem;
+  transition: width 1s, height 1s;
+  width: 20rem;
+  height: 20rem;
+  margin-right: 2rem;
+  margin-top: 8.5rem;
 }
 
 #rowFlexBox .imgLeft {
-  transition: width 1s;
+  transition: width 1s, height 1s;
   width: 20rem;
   height: 20rem;
+}
+
+#rowFlexBox .imglista10 {
+  transition: width 1s, height 1s;
+  width: 20rem;
+  height: 20rem;
+}
+
+#rowFlexBox .imglista10:hover {
+  width: 35rem;
+  height: 35rem;
+  margin-right: 5rem;
 }
 
 #rowFlexBox .imgLeft:hover {
@@ -439,13 +545,13 @@ body {
 }
 
 #rowFlexBox .imgRight:hover {
-  width: 35rem;
-  height: 35rem;
+  width: 31rem;
+  height: 31rem;
   margin-right: 5rem;
 }
 
 #rowFlexBox p:hover {
-  color: pink;
+  color: #740013;
 }
 
 #ventanaActivacion {
@@ -486,18 +592,32 @@ body {
   position: absolute;
 }
 
-#cont2daListaOrdenada .listaGrande-OL {
-  margin-top: 3rem;
-}
-
 #cont2daListaOrdenada .listaGrande-OL #plistaGrandeOL {
   margin-top: 1rem;
   margin-left: 1.5rem;
+  background: gray;
+  box-shadow: 10px 5px;
+  padding: 1rem;
+  width: 95%;
+}
+
+#cont2daListaOrdenada .listaGrande-OL #plistaGrandeOL:hover {
+  color: #740013;
 }
 
 #cont2daListaOrdenada #listImgGrande {
+  width: 31rem;
+  height: 31rem;
   margin-top: 2rem;
-  margin-left: 25%;
+  margin-left: 22%;
+  transition: width 1s, height 1s;
+}
+
+#cont2daListaOrdenada #listImgGrande:hover {
+  width: 40rem;
+  height: 40rem;
+  padding: 1rem;
+  margin-left: 10rem;
 }
 
 #textoDeFinalización {
@@ -516,7 +636,7 @@ body {
 
 #Contacto_Info {
   display: grid;
-  justify-content: space-around;
+  justify-content: center;
   width: 80%;
   margin-left: 10%;
   grid-gap: 1.5rem;
@@ -528,18 +648,10 @@ body {
   justify-self: center;
 }
 
-#Contacto_Info h1 {
-  color: -webkit-linear-gradient(90deg, white 0%, black 100%);
-  background: -webkit-linear-gradient(bottom left, black 0%, white 30%, black 40%, white 50%, black 60%, white 70%, black 80%, white 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  justify-self: center;
-}
-
 #Contacto_Info #direccionParaInquietudes {
   width: 70%;
   justify-self: center;
+  text-align: center;
 }
 
 #Contacto_Info #áreaDeSoporte {
@@ -558,6 +670,7 @@ body {
   margin: 0;
   min-width: 15rem;
   justify-self: center;
+  text-align: center;
 }
 
 #Contacto_Info #áreaDeSoporte a {
@@ -573,7 +686,6 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-self: center;
   grid-gap: 0;
-  margin-right: 4rem;
 }
 
 #Contacto_Info ul li {
@@ -638,17 +750,99 @@ body {
 @media (max-width: 1000px) {
   body {
     flex-direction: column;
+    justify-content: flex-start;
+  }
+  body ::-webkit-scrollbar {
+    width: 1rem;
+    height: 1rem;
+  }
+  body ::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(180deg, #3f00fb 0%, #172bb9 99%);
+    box-shadow: inset 2px 2px 5px 0 rgba(255, 255, 255, 0.5);
+    border-radius: 7rem;
+  }
+  body ::-webkit-scrollbar-track {
+    background: #9f80fd;
+    border-radius: 7rem;
+  }
+  .lineadireccionadora {
+    visibility: hidden;
+    display: none;
   }
   #navbar {
-    height: 40vh;
-    width: 100%;
+    height: 18rem;
+    width: 99.5%;
     position: absolute;
+    margin-right: 6rem;
   }
   #main-doc {
-    margin: 40vh 0 0 0;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+  }
+  #welcomeSection {
+    width: 100%;
+    margin-left: 0;
+    left: 0;
+    top: 18rem;
+    width: 99.5%;
+  }
+  #welcomeSection #wSImg {
+    margin: 0;
+    padding: 0;
+  }
+  .main-section {
+    position: absolute;
+    margin-top: 36.5rem;
+    width: 99%;
+  }
+  .main-section .mstext {
+    width: 20rem;
+    margin-right: 10rem;
+    text-align: center;
+  }
+  .main-section ol {
+    width: 100%;
+  }
+  .main-section li {
+    width: 8rem;
+  }
+  .main-section .req-sistema {
+    width: 20%;
+    height: 10%;
+  }
+  .main-section #secondListCont-OL {
+    flex-direction: column;
+  }
+  .main-section img {
+    width: 8rem;
+    height: 8rem;
+  }
+  .main-section #rowFlexBox {
+    flex-direction: column;
+    max-width: 5rem;
+  }
+  .main-section #rowFlexBox #imgLeft {
+    width: 1rem;
+    height: 1rem;
+  }
+  .main-section #rowFlexBox #imgRight {
+    width: 1rem;
+    height: 1rem;
+  }
+  .main-section #rowFlexBox p {
+    width: 50%;
+  }
+  .main-section img {
+    width: 5rem;
+    height: 5rem;
   }
   h1 {
     text-align: center;
+  }
+  #Contacto_Info {
+    margin-top: 1450%;
+    max-width: 54vw;
   }
 }
 
