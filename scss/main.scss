@@ -89,7 +89,7 @@ $navMenuBackground: -webkit-linear-gradient(
 .switch {
   position: fixed;
   right: 2rem;
-  top: 2rem;
+  top: .5rem;
   height: 3rem;
   width: 3rem;
   /*background: rgb(255, 255, 255);
@@ -225,9 +225,7 @@ body {
   }
 }
 
-#menutitle {
-  display: grid;
-  grid-gap: 1rem;
+#menutitle {  
   font-size: 1.5rem;
   font-weight: 999;
   margin-left: 1rem;
