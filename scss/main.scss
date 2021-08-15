@@ -163,10 +163,26 @@ body {
 
 #main-doc {
   margin-left: 20%;
-  width: 80%;
+  width: 80%;  
 }
 
+
+
 /* Styling for Navigation Menu */
+
+/* Navigation Menu Toggler */
+
+.NMview {
+  position: fixed;
+  left: .5rem;
+  top: .5rem;    
+  width: 5rem;
+  height: 2.5rem;    
+  background-color: transparent;
+  border: 1px solid $mainTextColor;
+  color: $mainTextColor;    
+  z-index: 100;  
+}
 
 #navbar {
   position: fixed;
@@ -179,13 +195,6 @@ body {
   height: 100%;
   border: 5px solid gray;
   border-radius: 2%;
-  #header {
-    font-weight: 550;
-    padding: 10px 0 0 10px;
-    font-size: 26px;
-    color: white;
-  }
-
   p {
     padding-left: 20px;
     font-size: 18px;
@@ -216,15 +225,29 @@ body {
   }
 }
 
+#menutitle {
+  display: grid;
+  grid-gap: 1rem;
+  font-size: 1.5rem;
+  font-weight: 999;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;  
+  padding-right: 2rem;    
+  text-align:right;
+}
+
 #welcomeSection {
   width: 80%;
   height: 18rem;
   margin-left: 19%;
   left: 1%;
-  position: absolute;
+  position: absolute; 
 
   #WSImg {
-    width: 100%;
+    width: 80%;
+    margin-left: 8%;
+    padding: 2.5rem;
   }
 
   div {
@@ -334,13 +357,15 @@ body {
   box-sizing: border-box;
   height: 100%;
   padding: 3rem;
+  justify-self: center;
   width: 100%;
-  //transition: width 1s, height 1s;
+  transition: width 2s, height 2s ease-in;
 }
 
 #requerimientosDeSistemaImg:hover {
   height: 115%;
   width: 115%;
+  padding: 3rem;
   justify-self: center;
 }
 
@@ -457,14 +482,13 @@ body {
     color: rgb(116, 0, 19);
   }
 
-  #ejecutarComoAdminIMG {
-    //transition: width 1s, height 1s;
+  #ejecutarComoAdminIMG {    
     width: 20rem;
     height: 20rem;
     margin-right: 3rem;
     margin-top: 1rem;
     padding: 0.5rem;
-    transition: width 1s, height 1s;
+    transition: width 2s, height 2s;
   }
 
   #ejecutarComoAdminIMG:hover {
@@ -825,7 +849,7 @@ body {
   #main-doc {
     margin: 0;
     padding: 0;
-    width: 100vw;
+    width: 100vw;    
   }
 
   #welcomeSection {

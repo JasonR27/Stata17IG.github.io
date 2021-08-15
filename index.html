@@ -11,10 +11,12 @@
 </head>
 
 <body class="StataTheme">
-  <script type="text/javascript" src="scripts/darkMode.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="scripts/darkMode.js"></script>
+  <script type="text/javascript" src="scripts/toggleNavigationMenuView.js"></script>  
+  <input type="button" id="HideMenuButton" class="NMview" onclick="NMview()" value="Hide Menu"></input>
   <nav id="navbar" class="navMenuColors">
-    <header id="header">Stata 17 Installation Guide Menu</header>
+    <header id="menutitle">Stata 17 Installation Guide Menu</header>
     <ul>
       <li><a class="nav-link" href="#guiaInstalacion">Guia de Instalación</a></li>
       <li><a class="nav-link" href="#requirimientosDeSistema">Requirimientos de Sistema</a></li>
@@ -41,7 +43,6 @@
       <img id="WSImg" src="images/StataLogo2.png" alt="Nvivo Logo"></img>
     </div>
     <button class="switch" id="darkmode" onclick="darkmode()" data-switch-dark aria-hidden>Night mode</button>
-
     <section class="main-section" id="introducción">
       <h1 class="mainSectionTitles titles">Guía de Instalación Stata 17 para Windows
       </h1>
@@ -274,6 +275,7 @@
       <h1 class="mainSectionTitles titles">Nota:</h1>
       <p id="direccionParaInquietudes">Si tiene cualquier inquietud adicional o problemas con la instalación
         del software, podrá comunicarse con el siguiente contacto:</p>
+        <a class="mainSectionTitles sendEmail titles" href="mailto:Soporte@Software-Shop.com">Soporte@Software-Shop.com</a>
       <div id="areaDeSoporteyRedesSocialContainer">
         <div id="áreaDeSoporte">
         <b>Área de Soporte
@@ -289,8 +291,7 @@
         </a>
         <a href="https://www.software-shop.com/"><img src="images/SoftwareShopIcon.png"></img></a>
       </div>
-    </div>
-    <a class="mainSectionTitles sendEmail titles" href="mailto:Soporte@Software-Shop.com">Soporte@Software-Shop.com</a>
+    </div>    
       <ul>
         <li>
           <b>Argentina</b>
@@ -329,5 +330,4 @@
     </div>
   </main>
 </body>
-
 </html>

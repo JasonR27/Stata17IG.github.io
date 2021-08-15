@@ -101,6 +101,19 @@ body {
 }
 
 /* Styling for Navigation Menu */
+/* Navigation Menu Toggler */
+.NMview {
+  position: fixed;
+  left: .5rem;
+  top: .5rem;
+  width: 5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  z-index: 100;
+}
+
 #navbar {
   position: fixed;
   list-style: none;
@@ -112,13 +125,6 @@ body {
   height: 100%;
   border: 5px solid gray;
   border-radius: 2%;
-}
-
-#navbar #header {
-  font-weight: 550;
-  padding: 10px 0 0 10px;
-  font-size: 26px;
-  color: white;
 }
 
 #navbar p {
@@ -150,6 +156,18 @@ body {
   font-weight: 999;
 }
 
+#menutitle {
+  display: grid;
+  grid-gap: 1rem;
+  font-size: 1.5rem;
+  font-weight: 999;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  text-align: right;
+}
+
 #welcomeSection {
   width: 80%;
   height: 18rem;
@@ -159,7 +177,9 @@ body {
 }
 
 #welcomeSection #WSImg {
-  width: 100%;
+  width: 80%;
+  margin-left: 8%;
+  padding: 2.5rem;
 }
 
 #welcomeSection div {
@@ -267,12 +287,15 @@ body {
   box-sizing: border-box;
   height: 100%;
   padding: 3rem;
+  justify-self: center;
   width: 100%;
+  transition: width 2s, height 2s ease-in;
 }
 
 #requerimientosDeSistemaImg:hover {
   height: 115%;
   width: 115%;
+  padding: 3rem;
   justify-self: center;
 }
 
@@ -396,7 +419,7 @@ body {
   margin-right: 3rem;
   margin-top: 1rem;
   padding: 0.5rem;
-  transition: width 1s, height 1s;
+  transition: width 2s, height 2s;
 }
 
 #oLContainer #ejecutarComoAdminIMG:hover {
