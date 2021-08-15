@@ -156,16 +156,10 @@ body {
   margin-left: 19%;
   left: 1%;
   position: absolute;
-  display: grid;
 }
 
-#welcomeSection img {
+#welcomeSection #WSImg {
   width: 100%;
-  height: 100%;
-  z-index: -1;
-  position: absolute;
-  left: 0;
-  transition: opacity 1s ease-in-out;
 }
 
 #welcomeSection div {
@@ -238,11 +232,6 @@ body {
 }
 
 /* Main doc Styles */
-#guiaInstalacion {
-  padding: 3rem;
-  justify-self: center;
-}
-
 #parrafoBienvenida {
   margin: 1rem;
 }
@@ -637,14 +626,13 @@ body {
 #Contacto_Info {
   display: grid;
   justify-content: center;
-  width: 80%;
-  margin-left: 10%;
+  width: 100%;
   grid-gap: 1.5rem;
 }
 
-#Contacto_Info #nvivoEditedLogo {
-  width: 200px;
-  height: 100px;
+#Contacto_Info #Stata17Logo {
+  width: 11rem;
+  height: 7rem;
   justify-self: center;
 }
 
@@ -673,12 +661,20 @@ body {
   text-align: center;
 }
 
-#Contacto_Info #áreaDeSoporte a {
-  width: 15%;
-  margin: 0;
-  text-decoration: none;
+#Contacto_Info #areaDeSoporteyRedesSocialContainer {
+  display: flex;
+  padding: 2rem;
   justify-self: center;
-  color: white;
+  padding: 0;
+  margin: 0;
+}
+
+#Contacto_Info .sendEmail {
+  font-size: 3rem;
+  color: -webkit-linear-gradient(90deg, white 0%, black 100%);
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 1rem;
 }
 
 #Contacto_Info ul {
@@ -786,10 +782,6 @@ body {
     left: 0;
     top: 18rem;
     width: 99.5%;
-  }
-  #welcomeSection #wSImg {
-    margin: 0;
-    padding: 0;
   }
   .main-section {
     position: absolute;
