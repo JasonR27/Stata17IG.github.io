@@ -195,6 +195,7 @@ body {
   height: 100%;
   border: 5px solid gray;
   border-radius: 2%;
+  transition: opacity .5s, visibility .5s;
   p {
     padding-left: 20px;
     font-size: 18px;
@@ -313,11 +314,22 @@ body {
   width: 99%;
   margin-left: 0.3%;
   padding: 0;
-  display: grid;
 
   #parrafoBienvenida {
     width: 95%;
   }
+}
+
+#lineaDireccion {
+  margin-left: 25%;  
+  // width: 10%;  
+  padding: -3rem;
+  width: 100px;
+
+img{
+  width: 40rem;
+  height: 6rem;
+}
 }
 
 /* Main doc Styles */
@@ -497,19 +509,6 @@ body {
 
   .inicialización {
     margin-bottom: -7rem;
-  }
-
-  #lineaDireccionadora {
-    width: 45%;
-    margin-left: 13rem;
-  }
-
-  #lineaDireccioIzqDer {
-    margin-bottom: -9rem;
-  }
-
-  #listaImgALaDerecha {
-    margin-bottom: 3rem;
   }
 
   .lista3-OL {
@@ -832,16 +831,12 @@ body {
     @include scrollbars(1rem, $primaryColor);
   }
 
-  .lineadireccionadora {
-    visibility: hidden;
-    display: none;
-  }
 
   #navbar {
     height: 18rem;
     width: 99.5%;
     position: absolute;
-    margin-right: 6rem;
+    margin-right: 6rem;    
   }
 
   #main-doc {

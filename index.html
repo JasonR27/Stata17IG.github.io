@@ -13,7 +13,7 @@
 <body class="StataTheme">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="scripts/darkMode.js"></script>
-  <script type="text/javascript" src="scripts/toggleNavigationMenuView.js"></script>  
+  <script type="text/javascript" src="scripts/toggleNavigationMenuView.js"></script>
   <input type="button" id="HideMenuButton" class="NMview" onclick="NMview()" value="Hide Menu"></input>
   <nav id="navbar" class="navMenuColors">
     <header id="menutitle">Stata 17 Installation Guide Menu</header>
@@ -96,8 +96,9 @@
               alt="Prompt Ejecutar como Administrador"></img>
           </div>
 
-          <img class="imgRight" id="lineaDireccionadora" src="images/lineaDerechaIzquierda.png"
-            alt="esperarPorDescarga"></img>
+          <div id="lineaDireccion">
+            <img id="lineaDireccionadora" src="images/lineaDerechaIzquierda.png" alt="esperarPorDescarga"></img>
+          </div>
 
           <div id="rowFlexBox" class="inicialización">
             <img class="imgLeft" src="images/Page 2 Image 4.png" alt="esperarPorDescarga"></img>
@@ -115,7 +116,9 @@
             <img class="imgRight" id="listDerImg" src="images/Page 3 Image 1.png" alt="esperarPorDescarga"></img>
           </div>
 
-          <img id="lineaDireccionadora" src="images/lineaDerechaIzquierda.png" alt="esperarPorDescarga"></img>
+          <div id="lineaDireccion">
+            <img id="lineaDireccionadora" src="images/lineaDerechaIzquierda.png" alt="esperarPorDescarga"></img>
+          </div>
 
           <div id="rowFlexBox">
             <img class="imgLeft" src="images/Page 3 Image 3.png" alt="esperarPorDescarga"></img>
@@ -127,7 +130,7 @@
               </p>
             </li>
           </div>
-          <div id="lineaDireccioIzqDer">
+          <div id="lineaDireccion">
             <img id="lineaDireccionadora" src="images/lineaIzquierdaDerecha.png" alt="esperarPorDescarga"></img>
           </div>
           <div id="rowFlexBox" class="listaImgALaDerecha">
@@ -141,12 +144,11 @@
             </li>
             <img class="imgRight" id="listDerImg" src="images/Page 3 Image 5.png" alt="esperarPorDescarga"></img>
           </div>
-
-          <img id="lineaDireccionadora" class="lineadireccionadora" src="images/lineaDerechaIzquierda.png"
-            alt="esperarPorDescarga"></img>
-
+          <div id="lineaDireccion">
+            <img id="lineaDireccionadora" src="images/lineaDerechaIzquierda.png" alt="esperarPorDescarga"></img>
+          </div>
           <div id="rowFlexBox">
-            <img class="imgLeft" src="images/Page 4 Image 1.png" alt="esperarPorDescarga"></img>
+            <img id="lineaDireccionadora" class="imgLeft" src="images/Page 4 Image 1.png" alt="esperarPorDescarga"></img>
             <li id="Paso6" class="lista4-OL">
               <p id="plista4-OL" class="mstext">De las siguientes opciones,seleccione la
                 versión que ha adquirido, normalmente
@@ -156,7 +158,7 @@
               </p>
             </li>
           </div>
-          <div id="lineaDireccioIzqDer">
+          <div id="lineaDireccion">
             <img class="lineadireccionadora" id="lineaDireccionadora" src="images/lineaIzquierdaDerecha.png"
               alt="esperarPorDescarga"></img>
           </div>
@@ -172,10 +174,10 @@
             </li>
             <img class="imgRight" id="listDerImg" src="images/Page 4 Image 3.png" alt="esperarPorDescarga"></img>
           </div>
-
+          <div id="lineaDireccion">
           <img class="lineadireccionadora" id="lineaDireccionadora" src="images/lineaDerechaIzquierda.png"
             alt="esperarPorDescarga"></img>
-
+          </div>
           <div id="rowFlexBox">
             <img class="imgLeft" src="images/Page 4 Image 5.png" alt="esperarPorDescarga"></img>
             <li id="Paso8" class="lista4-OL">
@@ -190,10 +192,12 @@
               </p>
             </li>
           </div>
-          <div id="lineaDireccioIzqDer">
+
+          <div id="lineaDireccion">
             <img id="lineaDireccionadora" class="lineadireccionadora" src="images/lineaIzquierdaDerecha.png"
               alt="esperarPorDescarga"></img>
           </div>
+
           <div id="rowFlexBox">
             <li id="Paso9" class="lista3-OL">
               <p id="plista3-OL" class="mstext">La aplicación está lista para instalar,
@@ -203,9 +207,10 @@
             <img class="imgRight" src="images/Page 5 Image 1.png" alt="esperarPorDescarga"></img>
           </div>
 
+          <div id="lineaDireccion">
           <img id="lineaDireccionadora" class="lineadireccionadora" src="images/lineaDerechaIzquierda.png"
             alt="esperarPorDescarga"></img>
-
+          </div>
           <div id="rowFlexBox">
             <img class="imglista10" src="images/Page 5 Image 3.png" alt="esperarPorDescarga"></img>
             <li id="Paso10" class="lista4-OL">
@@ -213,7 +218,7 @@
               </p>
             </li>
           </div>
-          <div id="lineaDireccioIzqDer">
+          <div id="lineaDireccion">
             <img id="lineaDireccionadora" class="lineadireccionadora" src="images/lineaIzquierdaDerecha.png"
               alt="esperarPorDescarga"></img>
           </div>
@@ -275,23 +280,24 @@
       <h1 class="mainSectionTitles titles">Nota:</h1>
       <p id="direccionParaInquietudes">Si tiene cualquier inquietud adicional o problemas con la instalación
         del software, podrá comunicarse con el siguiente contacto:</p>
-        <a class="mainSectionTitles sendEmail titles" href="mailto:Soporte@Software-Shop.com">Soporte@Software-Shop.com</a>
+      <a class="mainSectionTitles sendEmail titles"
+        href="mailto:Soporte@Software-Shop.com">Soporte@Software-Shop.com</a>
       <div id="areaDeSoporteyRedesSocialContainer">
         <div id="áreaDeSoporte">
-        <b>Área de Soporte
-          Software Shop</b>
-        <p>Teléfono: Según País + Ext. 148</p>
+          <b>Área de Soporte
+            Software Shop</b>
+          <p>Teléfono: Según País + Ext. 148</p>
+        </div>
+        <div>
+          <a href="https://www.facebook.com/SOFTWAREshopInc/">
+            <i class="fab fa-4x fa-facebook"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/software-shop/">
+            <i class="fab fa-4x fa-linkedin"></i>
+          </a>
+          <a href="https://www.software-shop.com/"><img src="images/SoftwareShopIcon.png"></img></a>
+        </div>
       </div>
-      <div>
-        <a href="https://www.facebook.com/SOFTWAREshopInc/">
-          <i class="fab fa-4x fa-facebook"></i>
-        </a>
-        <a href="https://www.linkedin.com/company/software-shop/">
-          <i class="fab fa-4x fa-linkedin"></i>
-        </a>
-        <a href="https://www.software-shop.com/"><img src="images/SoftwareShopIcon.png"></img></a>
-      </div>
-    </div>    
       <ul>
         <li>
           <b>Argentina</b>
@@ -330,4 +336,5 @@
     </div>
   </main>
 </body>
+
 </html>

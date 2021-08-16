@@ -125,6 +125,7 @@ body {
   height: 100%;
   border: 5px solid gray;
   border-radius: 2%;
+  transition: opacity .5s, visibility .5s;
 }
 
 #navbar p {
@@ -242,11 +243,21 @@ body {
   width: 99%;
   margin-left: 0.3%;
   padding: 0;
-  display: grid;
 }
 
 .main-section #parrafoBienvenida {
   width: 95%;
+}
+
+#lineaDireccion {
+  margin-left: 25%;
+  padding: -3rem;
+  width: 100px;
+}
+
+#lineaDireccion img {
+  width: 40rem;
+  height: 6rem;
 }
 
 /* Main doc Styles */
@@ -428,19 +439,6 @@ body {
 
 #oLContainer .inicialización {
   margin-bottom: -7rem;
-}
-
-#oLContainer #lineaDireccionadora {
-  width: 45%;
-  margin-left: 13rem;
-}
-
-#oLContainer #lineaDireccioIzqDer {
-  margin-bottom: -9rem;
-}
-
-#oLContainer #listaImgALaDerecha {
-  margin-bottom: 3rem;
 }
 
 #oLContainer .lista3-OL {
@@ -781,10 +779,6 @@ body {
   body ::-webkit-scrollbar-track {
     background: #9f80fd;
     border-radius: 7rem;
-  }
-  .lineadireccionadora {
-    visibility: hidden;
-    display: none;
   }
   #navbar {
     height: 18rem;
