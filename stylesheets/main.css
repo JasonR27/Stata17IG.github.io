@@ -34,7 +34,7 @@
 .switch {
   position: fixed;
   right: 2rem;
-  top: .5rem;
+  top: 0.5rem;
   height: 3rem;
   width: 3rem;
   /*background: rgb(255, 255, 255);
@@ -104,8 +104,8 @@ body {
 /* Navigation Menu Toggler */
 .NMview {
   position: fixed;
-  left: .5rem;
-  top: .5rem;
+  left: 0.5rem;
+  top: 0.5rem;
   width: 5rem;
   height: 2.5rem;
   background-color: transparent;
@@ -125,7 +125,7 @@ body {
   height: 100%;
   border: 5px solid gray;
   border-radius: 2%;
-  transition: opacity .5s, visibility .5s;
+  transition: opacity 0.5s, visibility 0.5s;
 }
 
 #navbar p {
@@ -251,8 +251,7 @@ body {
 
 #lineaDireccion {
   margin-left: 25%;
-  padding: -3rem;
-  width: 100px;
+  padding: 0;
 }
 
 #lineaDireccion img {
@@ -443,7 +442,7 @@ body {
 
 #oLContainer .lista3-OL {
   margin-top: 5rem;
-  padding-top: 5rem;
+  padding-top: 3rem;
   width: 90%;
 }
 
@@ -495,6 +494,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding-top: -10rem;
 }
 
 #rowFlexBox p {
@@ -520,12 +520,15 @@ body {
   transform: translateX(20px);
 }
 
+#rowFlexBox {
+  margin-top: -3rem;
+}
+
 #rowFlexBox .imgRight {
   transition: width 1s, height 1s;
   width: 20rem;
   height: 20rem;
   margin-right: 2rem;
-  margin-top: 8.5rem;
 }
 
 #rowFlexBox .imgLeft {
