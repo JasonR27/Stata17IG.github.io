@@ -62,7 +62,6 @@
             $(".highlighted").removeClass("highlighted").removeClass("match");
             if (!searchAndHighlight($('.textSearchvalue_h').val())) {
                 alert("No results found");
-            }
- 
+            } 
  
         });

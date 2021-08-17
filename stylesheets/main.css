@@ -244,6 +244,9 @@ body {
   margin-left: 0.3%;
   padding: 0;
   display: grid;
+  /*Search Bar Styling*/
+  /* end of search bar styling */
+  /* Guide Content Styles */
 }
 
 .main-section .searchContend_h {
@@ -266,6 +269,10 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: .5rem;
+}
+
+.main-section .searchContend_h #search-bar-buttons .ui-block-c {
+  margin-left: 1rem;
 }
 
 .main-section .searchContend_h #SBbuttons {

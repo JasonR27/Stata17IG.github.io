@@ -314,6 +314,7 @@ body {
   padding: 0;
   display: grid;
 
+  /*Search Bar Styling*/
   
 .searchContend_h {
   justify-self: center;  
@@ -334,6 +335,10 @@ body {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
    grid-gap: .5rem;   
+
+   .ui-block-c {
+     margin-left: 1rem;
+   }
   }
 
   #SBbuttons {
@@ -363,7 +368,9 @@ body {
     margin: 0 -4px;
 }
 
+/* end of search bar styling */
 
+/* Guide Content Styles */
  
   #parrafoBienvenida {
     width: 95%;
