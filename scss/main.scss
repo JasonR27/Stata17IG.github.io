@@ -312,10 +312,64 @@ body {
   width: 99%;
   margin-left: 0.3%;
   padding: 0;
+  display: grid;
 
+  
+.searchContend_h {
+  justify-self: center;  
+  font-size: 2rem;
+  margin-top: 3rem;
+  
+  #text-12 {
+  width: 100%;
+  height: 50%;
+  }
+
+  .ui-grid-c {
+    display: grid;
+    grid-gap: 1.5rem;
+  }
+
+  #search-bar-buttons {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-gap: .5rem;   
+  }
+
+  #SBbuttons {
+    color: blue;
+  }
+
+}
+
+  
+.highlighted
+{
+    background-color: yellow;
+}
+.highlight
+{
+    background-color: #fff34d;
+    -moz-border-radius: 5px; /* FF1+ */
+    -webkit-border-radius: 5px; /* Saf3-4 */
+    border-radius: 5px; /* Opera 10.5, IE 9, Saf5, Chrome */
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* FF3.5+ */
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Saf3.0+, Chrome */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Opera 10.5+, IE 9.0 */
+}
+.highlight
+{
+    padding: 1px 4px;
+    margin: 0 -4px;
+}
+
+
+ 
   #parrafoBienvenida {
     width: 95%;
   }
+
+
 }
 
 #lineaDireccion {
