@@ -257,7 +257,9 @@ body {
 
 .main-section .searchContend_h #text-12 {
   width: 100%;
-  height: 50%;
+  height: 100%;
+  font-size: 2.5rem;
+  margin-right: 1rem;
 }
 
 .main-section .searchContend_h .ui-grid-c {
@@ -268,11 +270,8 @@ body {
 .main-section .searchContend_h #search-bar-buttons {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: .5rem;
-}
-
-.main-section .searchContend_h #search-bar-buttons .ui-block-c {
-  margin-left: 1rem;
+  grid-gap: 2.5rem;
+  text-align: center;
 }
 
 .main-section .searchContend_h #SBbuttons {

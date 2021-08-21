@@ -319,11 +319,13 @@ body {
 .searchContend_h {
   justify-self: center;  
   font-size: 2rem;
-  margin-top: 3rem;
+  margin-top: 3rem;  
   
   #text-12 {
   width: 100%;
-  height: 50%;
+  height: 100%;
+  font-size: 2.5rem;  
+  margin-right: 1rem;
   }
 
   .ui-grid-c {
@@ -334,10 +336,11 @@ body {
   #search-bar-buttons {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
-   grid-gap: .5rem;   
+   grid-gap: 2.5rem;   
+   text-align: center;
 
    .ui-block-c {
-     margin-left: 1rem;
+    //  margin-left: 1rem;
    }
   }
 
@@ -350,11 +353,11 @@ body {
   
 .highlighted
 {
-    background-color: orange;
+    background-color: yellow;
 }
 .highlight
 {
-    background-color: yellow;
+    background-color: #fff34d;
     -moz-border-radius: 5px; /* FF1+ */
     -webkit-border-radius: 5px; /* Saf3-4 */
     border-radius: 5px; /* Opera 10.5, IE 9, Saf5, Chrome */
