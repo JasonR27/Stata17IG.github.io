@@ -9,14 +9,15 @@
                     $('.highlighted').removeClass('highlighted'); //Remove old search highlights 
  
                     //Remove the previous matches
-                    $span = $('#realTimeContents span');
-                    $span.replaceWith($span.html());
+                    $mark = $('#realTimeContents mark');
+                    $mark.replaceWith($mark.html());
  
                     if (searchTerm === "&") {
                         searchTerm = "&amp;";
                         searchTermRegEx = new RegExp(searchTerm, "ig");
                     }
-                    $(selector).html($(selector).html().replace(searchTermRegEx, "<span class='match'>" + searchTerm + "</span>"));
+                    $(selector).text($(selector).text().replace(
+                        searchTermRegEx, "<mark class='match'>" + searchTerm + "</mark>"));
                     $('.match:first').addClass('highlighted');
  
                     var i = 0;
